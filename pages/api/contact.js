@@ -1,59 +1,61 @@
-// // pages/api/contact.js
-// export default async function handler(req, res) {
-//     if (req.method === 'POST') {
-//       const { name, email, message } = req.body;
-  
-//       // Here, you can integrate with an email service or database
-//       // For this example, we'll just console.log the data
-  
-//       console.log('Received message from:', name, email, message);
-  
-//       // Optionally, you can send the data to an email service, like SendGrid or NodeMailer
-//       // Example:
-//       // await sendEmail(name, email, message);
-  
-//       res.status(200).json({ status: 'Message sent successfully' });
-//     } else {
-//       res.status(405).json({ status: 'Method Not Allowed' });
-//     }
-//   }
-  
-
 import nodemailer from 'nodemailer';
+import { MongoClient } from 'mongodb';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, message } = req.body;
+    const { name, email, phone, message } = req.body;
+
+    // Log the request body to debug
+    console.log('Request Body:', req.body);
+
+    // Ensure name and phone are captured
+    if (!name || !phone) {
+      res.status(400).json({ status: 'Name and phone are required' });
+      return;
+    }
 
     // Configure the transporter with the custom mail server
     const transporter = nodemailer.createTransport({
       host: 'mail.samparkai.com',
       port: 587,
-      secure: false, // true for 465, false for other ports
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER, // your email account (likely an admin or service account)
-        pass: process.env.EMAIL_PASS  // your email password
+        user: process.env.EMAIL_USER, // connect@samparkai.com
+        pass: process.env.EMAIL_PASS  // password for connect@samparkai.com
       },
       tls: {
         rejectUnauthorized: false,
       },
     });
 
-    // Configure mail options
-    const mailOptions = {
-      from: email, // Use the visitor's email as the sender
-      to: 'your-email@example.com', // The email where you want to receive the message
-      subject: `New message from ${name}`,
-      text: message,
+    // Configure mail options for the visitor
+    const visitorMailOptions = {
+      from: 'connect@samparkai.com', // Sender address
+      to: email, // Recipient address (visitor's email)
+      subject: 'Thank you for contacting us',
+      text: `Hi ${name},\n\nThank you for reaching out. We have received your message and will get back to you soon.\n\nBest regards,\n MEANS Infra \n`
     };
 
-    // Try to send the email
+    // MongoDB connection string
+    const uri = "mongodb+srv://psitech:Psitech123@pms.ijqbdmu.mongodb.net/MEANS?retryWrites=true&w=majority";
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
     try {
-      await transporter.sendMail(mailOptions);
-      res.status(200).json({ status: 'Message sent successfully' });
+      // Send confirmation email to the visitor
+      await transporter.sendMail(visitorMailOptions);
+
+      // Store visitor data in MongoDB in the Visitor_details collection
+      await client.connect();
+      const database = client.db('MEANS');
+      const visitors = database.collection('Visitor_details');
+      await visitors.insertOne({ name, email, phone, message, date: new Date() });
+
+      res.status(200).json({ status: 'Message sent and data stored successfully' });
     } catch (error) {
-      console.error('Failed to send email:', error);
-      res.status(500).json({ status: 'Failed to send message' });
+      console.error('Failed to send email or store data:', error);
+      res.status(500).json({ status: 'Failed to send message or store data' });
+    } finally {
+      await client.close();
     }
   } else {
     res.status(405).json({ status: 'Method Not Allowed' });
