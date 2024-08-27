@@ -194,7 +194,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/ocean-background.jpg)' }}>
       {/* Header with Logos */}
-      <header className="flex justify-between items-center py-6 px-10 bg-blue-300 bg-opacity-50">
+      <header className="flex justify-evenly items-center py-6 px-10 bg-blue-300 bg-opacity-50">
         <Image src={InfraLogo} alt="Means Infrastructure Logo" width={110} height={65} />
         <Image src={MeansLogo} alt="Means Logo" width={120} height={65} />
         <Image src={SeabirdLogo} alt="Seabird Surveys Logo" width={100} height={65} />
