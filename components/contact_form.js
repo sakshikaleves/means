@@ -126,15 +126,16 @@ export default function ContactForm() {
     <div className="container mx-auto px-4 py-10">
       {/* Google Map */}
       <div className="mb-8">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.736831212393!2d73.02612607528756!3d19.022745035222973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c092b6d8ff5d%3A0x228c536dc3e38f42!2sD205%20Tower%207%202nd%20Floor%20Cbd%20Belapur%20Railway%20Station%2C%20Cbd%20Belapur%2C%20Navi%20Mumbai%2C%20Maharashtra%20400614!5e0!3m2!1sen!2sin!4v1693164587747!5m2!1sen!2sin" 
-          width="100%" 
-          height="350" 
-          style={{ border: 0 }} 
-          allowFullScreen="" 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade">
-        </iframe>
+      <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.837389762781!2d73.01958737542074!3d19.022189382105797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c18856fd2637%3A0x2c5a5e1f9b4621d5!2sD205%2C%20Tower%207%2C%202nd%20Floor%2C%20Cbd%20Belapur%20Railway%20Station%2C%20Cbd%20Belapur%2C%20Navi%20Mumbai%2C%20Maharashtra%20400614!5e0!3m2!1sen!2sin!4v1620727870732!5m2!1sen!2sin"
+          width="100%"
+          height="400"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          title="Company Location"
+        ></iframe>
+
       </div>
 
       {/* Information and Contact Form */}
@@ -218,7 +219,7 @@ export default function ContactForm() {
         <div className="space-y-8">
           <div>
             <h3 className="text-xl font-bold">Head Office</h3>
-            <p>D205 Tower 7 2nd Floor Cbd Belapur Railway Station,<br /> Cbd Belapur, Navi Mumbai - 400614</p>
+            <p>D205 Tower 7 2nd Floor Cbd Belapur Railway Station,<br /> Cbd Belapur, Navi Mumbai - 400614</p> <br/>
             <p>info@yourcompany.com<br />Tel: 123-456-7890<br />Fax: 123-456-7890</p>
           </div>
 
@@ -227,9 +228,6 @@ export default function ContactForm() {
             <p>To apply for a job with [Your Company Name], please send a cover letter together with your C.V. to: info@yourcompany.com</p>
           </div>
 
-          <div>
-            <h3 className="text-xl font-bold">Get a quote: 123-456-7890</h3>
-          </div>
         </div>
       </div>
     </div>

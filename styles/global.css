@@ -6,4 +6,59 @@
 html {
     scroll-behavior: smooth;
   }
-  
+  /* Custom animation for scroll effect */
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.product-card.animate-slide-in {
+  opacity: 1;
+  animation: slideIn 0.7s ease-out forwards;
+}
+
+  /* Styles for the wave effect and active tab */
+nav .wave-bg {
+  background: #9fe2ff;
+  position: absolute;
+  bottom: -10px;
+  height: 50px;
+  left: 0;
+  width: 100%;
+  transform: skewX(-10deg);
+  z-index: 1;
+}
+
+nav button.active-tab {
+  transform: translateY(-10px);
+  background: linear-gradient(to bottom, #00f260, #1881ea);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav button.active-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+nav button:not(.active-tab) {
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav button.active-tab,
+nav button:hover {
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
