@@ -96,7 +96,7 @@ import MeansLogo from '../public/Means.png';
 import SeabirdLogo from '../public/SEA-BIRD.png';
 import InfraLogo from '../public/Means-Infra.png';
 import ContactForm from '@/components/contact_form';
-import ProductCarousel from '@/components/Product';  // Ensure the path and export type match
+import ProductCarousel from '../components/product';  // Ensure the path and export type match
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
