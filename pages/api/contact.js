@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 import { MongoClient } from 'mongodb';
 
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, phone, message } = req.body;
@@ -20,8 +21,8 @@ export default async function handler(req, res) {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.EMAIL_USER, // connect@samparkai.com
-        pass: process.env.EMAIL_PASS  // password for connect@samparkai.com
+        user: 'connect@samparkai.com', // connect@samparkai.com
+        pass: 'sakshi'  // password for connect@samparkai.com
       },
       tls: {
         rejectUnauthorized: false,
