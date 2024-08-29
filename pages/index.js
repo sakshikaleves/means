@@ -249,10 +249,10 @@ export default function Home() {
         </p>
       </section>
 
-      <section id="about" className={`py-16 px-10 bg-gray-900 bg-opacity-75 ${activeSection === 'about' ? '' : 'hidden'}`}>
-        <h1 className="text-3xl font-bold mb-6 text-white text-center">About us</h1>
-        <p className="text-lg text-gray-200 max-w-4xl mx-auto">
-          Marine Electronics And Navigation Systems Private Limited – MEANS – is a Private limited company established in 1982 to provide technical systems and solutions to Indian Defense and Civil Maritime Industries in the fields of Electronics, Automation, Control Instrumentation, and Communications.
+      <section id="about" className={`py-16 px-10  bg-opacity-75 ${activeSection === 'about' ? '' : 'hidden'}`}>
+        <h1 className="text-3xl font-bold mb-6 text-black text-center">About us</h1>
+        <p className="text-lg text-gray-900 max-w-4xl mx-auto">
+        Marine Electronics And Navigation Systems Private Limited - MEANS is a Private limited company was established in the year 1982 to contribute towards providing technical systems and solutions to Indian Defense and Civil Maritime Industries in the fields of Electronics, Automation, Control Instrumentation and Communications. It was incorporated as a registered Private limited company under Registrar of Companies in Mumbai, India in the year 1994. MEANS expanded its activities in the area of Naval Aviation by providing systems and support services to Air Field Equipments and Aircraft systems and components.
         </p>
       </section>
 
@@ -278,12 +278,6 @@ export default function Home() {
       {/* Contact Us Section */}
       {activeSection === 'contact' && <ContactForm />}  {/* Using the ContactForm component */}
 
-      <section id="hsn" className={`py-16 px-10 ${activeSection === 'hsn' ? '' : 'hidden'}`}>
-        <h1 className="text-3xl font-bold mb-6 text-white text-center">HSN</h1>
-        <p className="text-lg text-gray-200 max-w-4xl mx-auto text-center">
-          HSN details go here.
-        </p>
-      </section>
     </div>
   );
 }
