@@ -421,6 +421,9 @@ import InfraLogo from '../public/Means-Infra.png';
 import WaterImage from '../public/WaterImage.png'; 
 import ContactForm from '@/components/contact_form';
 import ProductCarousel from '../components/product';
+import HomePage from '@/components/HomePage';
+import AboutUs from '@/components/AboutUs';
+import Services from '@/components/Services';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
@@ -495,17 +498,11 @@ export default function Home() {
 
       {/* Sections */}
       <section className={`py-16 px-10 ${activeSection === 'home' ? '' : 'hidden'}`}>
-        <h1 className="text-4xl font-bold mb-6 text-white">Welcome to Our Company</h1>
-        <p className="text-lg text-black max-w-4xl mx-auto">
-          This is the home section. Click on the tabs above to navigate to different sections.
-        </p>
+          <HomePage/>
       </section>
 
       <section id="about" className={`py-16 px-10 bg-white-900 bg-opacity-75 ${activeSection === 'about' ? '' : 'hidden'}`}>
-        <h1 className="text-3xl font-bold mb-6 text-black text-center">About us</h1>
-        <p className="text-lg text-black max-w-4xl mx-auto">
-          Marine Electronics And Navigation Systems Private Limited – MEANS – is a Private limited company established in 1982 to provide technical systems and solutions to Indian Defense and Civil Maritime Industries in the fields of Electronics, Automation, Control Instrumentation, and Communications.
-        </p>
+        <AboutUs/>
       </section>
 
       <section id="products" className={`py-16 px-10 z-1 ${activeSection === 'products' ? '' : 'hidden'}`}>
@@ -514,10 +511,7 @@ export default function Home() {
       </section>
 
       <section id="services" className={`py-16 px-10 bg-white-900 bg-opacity-75 ${activeSection === 'services' ? '' : 'hidden'}`}>
-        <h1 className="text-3xl font-bold mb-6 text-black text-center">Our Services</h1>
-        <p className="text-lg text-black max-w-4xl mx-auto text-center">
-          Information about our services goes here.
-        </p>
+        <Services/>
       </section>
 
       <section id="news" className={`py-16 px-10 ${activeSection === 'news' ? '' : 'hidden'}`}>

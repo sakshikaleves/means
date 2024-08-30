@@ -563,8 +563,8 @@ export default function ContactForm() {
         <div className="space-y-8">
           <div>
             <h3 className="text-xl font-bold">Head Office</h3>
-            <p>D205 Tower 7 2nd Floor Cbd Belapur Railway Station,<br /> Cbd Belapur, Navi Mumbai - 400614</p>
-            <p>info@yourcompany.com<br />Tel: 123-456-7890<br />Fax: 123-456-7890</p>
+            <p>D-205, 2nd Floor, Belapur Railway Station Complex, CBD Belapur, Navi Mumbai-400 614. India.</p>
+            <p>info@means.co.in<br />Tel: +91 22 4356 1000<br /></p>
           </div>
 
           <div>
