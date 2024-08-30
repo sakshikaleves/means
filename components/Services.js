@@ -117,21 +117,6 @@ export default function Services() {
         ))}
 
         {/* Partners Section */}
-        <div className="partners-section text-center py-15 mt-20">
-          <h3 className="text-3xl font-semibold mb-4">Our Global Partners</h3>
-          <p className="text-lg text-gray-700 mb-8">
-            We collaborate with the best in the industry to bring state-of-the-art solutions to our customers.
-          </p>
-          <div className="flex justify-center space-x-8">
-            <Image src="/partners/sirehna.png" alt="Partner 1" width={90} height={90} />
-            <Image src="/partners/sirehna.png" alt="Partner 2" width={100} height={60} />
-            <Image src="/partners/sirehna.png" alt="Partner 1" width={90} height={90} />
-            <Image src="/partners/sirehna.png" alt="Partner 2" width={100} height={60} />
-            <Image src="/partners/sirehna.png" alt="Partner 1" width={90} height={90} />
-            <Image src="/partners/sirehna.png" alt="Partner 2" width={100} height={60} />
-            {/* Add more partners as needed */}
-          </div>
-        </div>
       </div>
     </section>
   );
