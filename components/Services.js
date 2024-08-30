@@ -22,31 +22,31 @@ export default function Services() {
     {
       title: "Marine Electronics and Navigation Systems",
       description: "Design and development of automation and control systems, system support and maintenance for Indian Navy, Coast Guard, and global marine engine suppliers.",
-      image: "/Services/survey_service.png", // Replace with an appropriate image path
+      image: "/Services/marine_service.png", // Replace with an appropriate image path
       alt: "Marine Electronics and Navigation Systems",
     },
     {
       title: "Dredging and Marine Infrastructure",
       description: "Specialized in marine and land infrastructure development, including dredging, harbor development, and offshore pipe laying.",
-      image: "/dredging_icon.png", // Replace with an appropriate image path
+      image: "/Services/infra.png", // Replace with an appropriate image path
       alt: "Dredging and Marine Infrastructure",
     },
     {
       title: "Surveying Services",
       description: "Offering hydrographic, land, oceanographic, and geotechnical/geophysical surveys, along with dredging survey services.",
-      image: "/surveying_icon.png", // Replace with an appropriate image path
+      image: "/Services/survey.png", // Replace with an appropriate image path
       alt: "Surveying Services",
     },
     {
       title: "Naval Aviation Services",
       description: "Systems and support services for naval aviation, focusing on airfield equipment and aircraft systems/components.",
-      image: "/naval_aviation_icon.png", // Replace with an appropriate image path
+      image: "/Services/pro.png", // Replace with an appropriate image path
       alt: "Naval Aviation Services",
     },
     {
       title: "Manufacturing and Product Supply",
       description: "Manufacturing specialized maritime equipment, providing products tailored to meet the unique needs of the maritime industry.",
-      image: "/manufacturing_icon.png", // Replace with an appropriate image path
+      image: "/Services/product.png", // Replace with an appropriate image path
       alt: "Manufacturing and Product Supply",
     },
   ];
@@ -123,6 +123,10 @@ export default function Services() {
             We collaborate with the best in the industry to bring state-of-the-art solutions to our customers.
           </p>
           <div className="flex justify-center space-x-8">
+            <Image src="/partners/sirehna.png" alt="Partner 1" width={90} height={90} />
+            <Image src="/partners/sirehna.png" alt="Partner 2" width={100} height={60} />
+            <Image src="/partners/sirehna.png" alt="Partner 1" width={90} height={90} />
+            <Image src="/partners/sirehna.png" alt="Partner 2" width={100} height={60} />
             <Image src="/partners/sirehna.png" alt="Partner 1" width={90} height={90} />
             <Image src="/partners/sirehna.png" alt="Partner 2" width={100} height={60} />
             {/* Add more partners as needed */}

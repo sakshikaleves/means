@@ -137,26 +137,6 @@ export default function AboutUs() {
       ))}
 
       {/* Stats Section */}
-      <div className="stats-section bg-blue-400 text-white py-10 mt-16 rounded-md">
-        <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <h3 className="text-5xl font-bold">1982</h3>
-            <p className="text-lg">Year Established</p>
-          </div>
-          <div>
-            <h3 className="text-5xl font-bold">500+</h3>
-            <p className="text-lg">Projects Completed</p>
-          </div>
-          <div>
-            <h3 className="text-5xl font-bold">100+</h3>
-            <p className="text-lg">Clients Served</p>
-          </div>
-          <div>
-            <h3 className="text-5xl font-bold">20</h3>
-            <p className="text-lg">Awards Won</p>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
