@@ -502,6 +502,7 @@ export default function Home() {
       </section>
 
       <section id="about" className={`py-16 px-10 bg-white-900 bg-opacity-75 ${activeSection === 'about' ? '' : 'hidden'}`}>
+        <h1 className="text-3xl font-bold mb-6 text-black text-center">About us</h1>
         <AboutUs/>
       </section>
 
@@ -526,7 +527,7 @@ export default function Home() {
 
       <section id="hsn" className={`py-16 px-10 ${activeSection === 'hsn' ? '' : 'hidden'}`}>
         <h1 className="text-3xl font-bold mb-6 text-white text-center">HSN</h1>
-        <p className="text-lg text-black max-w-4xl mx-auto text-center">
+        <p className="text-lg text-gray-200 max-w-4xl mx-auto text-center">
           HSN details go here.
         </p>
       </section>

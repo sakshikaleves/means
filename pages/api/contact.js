@@ -7,10 +7,11 @@ export default async function handler(req, res) {
     const { name, email, phone, message } = req.body;
 
     // Log the request body to debug
-    console.log('Request Body:', req.body);
+    console.log('Request Body:', JSON.stringify(req.body, null, 2));
 
     // Ensure name and phone are captured
     if (!name || !phone) {
+      console.log('Validation failed: Name and phone are required');
       res.status(400).json({ status: 'Name and phone are required' });
       return;
     }
@@ -21,8 +22,8 @@ export default async function handler(req, res) {
       port: 587,
       secure: false,
       auth: {
-        user: 'connect@samparkai.com', // connect@samparkai.com
-        pass: 'sakshi'  // password for connect@samparkai.com
+        user: process.env.EMAIL_USER, // connect@samparkai.com
+        pass: process.env.EMAIL_PASS  // password for connect@samparkai.com
       },
       tls: {
         rejectUnauthorized: false,
@@ -42,23 +43,35 @@ export default async function handler(req, res) {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
     try {
+      console.log('Attempting to send email to:', email);
+      
       // Send confirmation email to the visitor
-      await transporter.sendMail(visitorMailOptions);
+      const emailInfo = await transporter.sendMail(visitorMailOptions);
+      console.log('Email sent:', emailInfo.response);
 
-      // Store visitor data in MongoDB in the Visitor_details collection
+      console.log('Connecting to MongoDB');
       await client.connect();
+      console.log('Connected to MongoDB');
+
       const database = client.db('MEANS');
       const visitors = database.collection('Visitor_details');
-      await visitors.insertOne({ name, email, phone, message, date: new Date() });
+
+      console.log('Storing visitor data in MongoDB');
+      const result = await visitors.insertOne({ name, email, phone, message, date: new Date() });
+      console.log('Data stored in MongoDB with ID:', result.insertedId);
 
       res.status(200).json({ status: 'Message sent and data stored successfully' });
     } catch (error) {
-      console.error('Failed to send email or store data:', error);
-      res.status(500).json({ status: 'Failed to send message or store data' });
+      console.error('Error occurred:', error.message);
+      console.error('Full error details:', error);
+      res.status(500).json({ status: 'Failed to send message or store data', error: error.message });
     } finally {
+      console.log('Closing MongoDB connection');
       await client.close();
+      console.log('MongoDB connection closed');
     }
   } else {
+    console.log('Invalid method:', req.method);
     res.status(405).json({ status: 'Method Not Allowed' });
   }
 }
