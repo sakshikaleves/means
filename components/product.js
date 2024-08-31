@@ -357,15 +357,6 @@ import { useEffect, useState } from 'react';
 const products = [
   {
     images: [
-      '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-.png',
-      '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-02.png',
-    ],
-    alt: 'Engine Telegraph System',
-    description: 'Engine Telegraph System Model ET 44 - 004 (Master). Essential for marine communication.',
-    pdf: '/products_info/Torsionmeter_catalog.pdf',
-  },
-  {
-    images: [
       '/products/TORSIONMETER.png',
       '/products/TORSION_METER_INSIDE.png',
       '/products/TORSIONMETER--BAG.png'
@@ -377,10 +368,19 @@ const products = [
   },
   {
     images: [
-      '/products/Converter.png',
+      '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-.png',
+      '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-02.png',
+    ],
+    alt: 'Engine Telegraph System',
+    description: 'Engine Telegraph System Model ET 44 - 004 (Master). Essential for marine communication.',
+    pdf: '/products_info/Torsionmeter_catalog.pdf',
+  },
+  {
+    images: [
+      '/products/Propeller_Order.jpg',
       //add more images of same product as needed
     ],
-    alt: '',
+    alt: 'Converter',
     description: 'Torsionmeter TD 56. Used to measure torque and speed in marine applications.',
     pdf: '/products_info/Torsionmeter_catalog.pdf',
   }
