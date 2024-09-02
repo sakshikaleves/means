@@ -201,12 +201,6 @@ export default function Home() {
             >
               Contact us
             </button>
-            <button
-              onClick={() => setActiveSection('hsn')}
-              className={`py-4 px-6 transition relative z-10 pl-3 custom-hsn-button ${activeSection === 'hsn' ? 'active-tab' : ''}`}
-            >
-              HSN
-            </button>
           </div>
         </div>
 
