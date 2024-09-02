@@ -453,7 +453,7 @@ export default function ContactForm() {
         <div>
           <div className="mb-8">
             <h3 className="text-xl font-bold">Inquiries</h3>
-            <p>For any inquiries, questions or commendations, please call: 123-456-7890 or fill out the following form</p>
+            <p>For any inquiries, questions or commendations, please call: +91 22 4356 1000 or fill out the following form</p>
           </div>
 
           {/* Contact Form */}
@@ -563,21 +563,11 @@ export default function ContactForm() {
         <div className="space-y-8">
           <div>
             <h3 className="text-xl font-bold">Head Office</h3>
-            <p>D-205, 2nd Floor, Belapur Railway Station Complex, CBD Belapur, Navi Mumbai-400 614. India.</p>
+            <p>D-205, 2nd Floor, Belapur Railway Station Complex, CBD Belapur,<br /> Navi Mumbai-400 614. India.</p>
+            <br />
             <p>info@means.co.in<br />Tel: +91 22 4356 1000<br /></p>
           </div>
 
-          <div>
-            <h3 className="text-xl font-bold">Employment</h3>
-            <p>
-              To apply for a job with [Your Company Name], please send a cover letter together with your C.V. to:
-              info@yourcompany.com
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold">Get a quote: 123-456-7890</h3>
-          </div>
         </div>
       </div>
     </div>
