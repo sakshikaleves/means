@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 
 html {
     scroll-behavior: smooth;
@@ -39,6 +45,7 @@ html {
     /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); */
     
 }
+
 
 
   
@@ -87,7 +94,7 @@ nav button:hover {
   
   .nav-button:hover,
   .active-tab {
-    /* background-color: rgba(0, 0, 0, 0.2); */
+    background-color: transparent;
     transform: translateY(-10px);
   }
   
@@ -213,5 +220,93 @@ nav {
   }
   100% {
     transform: translateX(-50%); /* Scrolls the full width of the track */
+  }
+}
+
+
+
+
+/* Menu Button for Mobile */
+.menu-button {
+  padding: 20px;
+  background-color: transparent; /* Highlighting for visibility, you can remove this */
+  border: none;
+  cursor: pointer; 
+  margin-bottom: 40px;
+}
+
+/* Positioning the menu button in the desired spot on mobile */
+.lg:hidden .menu-button {
+  position: absolute;
+  left: 50%;
+  bottom: -50px; /* Adjusted from -20px to -50px to move the button further down */
+  transform: translateX(-50%);
+  z-index: 100; /* Ensures the button stays on top */
+}
+
+
+/* Menu Overlay */
+.menu-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Menu Container */
+.menu-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Items */
+.menu-item {
+  display: block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 8px 16px;
   }
 }
