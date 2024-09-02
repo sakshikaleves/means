@@ -22,7 +22,7 @@ export default function AboutUs() {
     {
       title: "Founder Director",
       text: "Mr. P.B. Shukla, the visionary Founder Director of MEANS, has led the company from its inception in 1982. Under his leadership, MEANS has become a trusted name in the maritime sector, known for its commitment to delivering high-quality technical systems and solutions to the Indian Defense and Civil Maritime Industries. His dedication and expertise have been instrumental in the company's growth and success.",
-      image: "/founder_director.png", // Replace with actual image path
+      image: "/founder_director.jpg", // Replace with actual image path
       alt: "Founder Director P.B. Shukla",
       extraText: "M. Sc. (Physics), L.L.B"
     },

@@ -26,28 +26,22 @@ export default function Services() {
       alt: "Marine Electronics and Navigation Systems",
     },
     {
-      title: "Dredging and Marine Infrastructure",
-      description: "Specialized in marine and land infrastructure development, including dredging, harbor development, and offshore pipe laying.",
-      image: "/Services/infra.png", // Replace with an appropriate image path
-      alt: "Dredging and Marine Infrastructure",
+      title: "*Naval Aviation Services",
+      description: "Systems and support services for naval aviation, focusing on airfield equipment and aircraft systems/components.",
+      image: "/Services/pro.png", // Replace with an appropriate image path
+      alt: "Naval Aviation Services",
+    },
+    {
+      title: "*Manufacturing and Product Supply",
+      description: "Manufacturing specialized maritime equipment, providing products tailored to meet the unique needs of the maritime industry.",
+      image: "/Services/product.png", // Replace with an appropriate image path
+      alt: "Manufacturing and Product Supply",
     },
     {
       title: "Surveying Services",
       description: "Offering hydrographic, land, oceanographic, and geotechnical/geophysical surveys, along with dredging survey services.",
       image: "/Services/survey.png", // Replace with an appropriate image path
       alt: "Surveying Services",
-    },
-    {
-      title: "Naval Aviation Services",
-      description: "Systems and support services for naval aviation, focusing on airfield equipment and aircraft systems/components.",
-      image: "/Services/pro.png", // Replace with an appropriate image path
-      alt: "Naval Aviation Services",
-    },
-    {
-      title: "Manufacturing and Product Supply",
-      description: "Manufacturing specialized maritime equipment, providing products tailored to meet the unique needs of the maritime industry.",
-      image: "/Services/product.png", // Replace with an appropriate image path
-      alt: "Manufacturing and Product Supply",
     },
   ];
 
