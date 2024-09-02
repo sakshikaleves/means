@@ -186,7 +186,7 @@ nav {
 
 .image-track {
   display: flex;
-  width: calc(200px * 8 + 40px * 8); /* Adjusted to accommodate increased gap */
+  width: calc(200px * 16 + 40px * 16); /* Updated width to include all images and gaps */
   animation: scroll 20s linear infinite;
 }
 
@@ -212,6 +212,6 @@ nav {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Scrolls to half the width of the entire image set to loop */
+    transform: translateX(-50%); /* Scrolls the full width of the track */
   }
 }

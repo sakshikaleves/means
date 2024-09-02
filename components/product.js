@@ -18,7 +18,7 @@
 //       '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-.png',
 //       '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-02.png',
 //     ],
-//     alt: 'Engine Telegraph System',
+//     alt: 'Engine Order Telegraph System',
 //     description: '',
 //     pdf: '/products_info/Torsionmeter_catalog.pdf',
 //   },
@@ -27,7 +27,16 @@
 //       '/products/Propeller_Order.jpg',
 //       //add more images of same product as needed
 //     ],
-//     alt: 'Converter',
+//     alt: 'Propeller Order Telegraph System',
+//     description: '',
+//     pdf: '/products_info/Torsionmeter_catalog.pdf',
+//   },
+//   {
+//     images: [
+//       '/products/lora.png',
+//       //add more images of same product as needed
+//     ],
+//     alt: 'LoRa Communication system',
 //     description: '',
 //     pdf: '/products_info/Torsionmeter_catalog.pdf',
 //   }
@@ -88,36 +97,20 @@
 //       {products.map((product, index) => (
 //         <div
 //           key={index}
-//           className={`product-card flex flex-col p-6 bg-white shadow-lg rounded-lg space-y-4 lg:space-y-0 lg:space-x-8 opacity-0 transition-opacity duration-700 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+//           className={`product-card flex flex-col lg:flex-row items-center justify-between p-6 bg-white shadow-lg rounded-lg space-y-4 lg:space-y-0 opacity-0 transition-opacity duration-700 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
 //           style={{ opacity: 0 }}
 //         >
-//           <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
-//             <div
-//               className="relative"
-//               style={{ width: '300px', height: '300px' }}
-//             >
-//               <Image
-//                 src={product.images[currentIndexes[index]]}
-//                 alt={product.alt}
-//                 layout="fill"
-//                 objectFit="contain"
-//                 className="rounded-lg transition-transform duration-700"
-//               />
-//             </div>
+//           <div className="relative" style={{ width: '300px', height: '300px' }}>
+//             <Image
+//               src={product.images[currentIndexes[index]]}
+//               alt={product.alt}
+//               layout="fill"
+//               objectFit="contain"
+//               className="rounded-lg transition-transform duration-700"
+//             />
 //           </div>
-//           <div className="w-full lg:w-2/3 text-center lg:text-left">
-//             <h2 className="text-2xl font-bold mb-2">{product.alt}</h2>
-//             <p className="text-gray-700">
-//               {product.description}{' '}
-//               <a
-//                 href={product.pdf}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="text-blue-600 hover:text-blue-800"
-//               >
-                
-//               </a>
-//             </p>
+//           <div className="w-full text-center lg:text-center lg:w-1/2">
+//             <h2 className="text-2xl font-bold">{product.alt}</h2>
 //           </div>
 //         </div>
 //       ))}
@@ -143,10 +136,19 @@ const products = [
   },
   {
     images: [
+      '/products/optical_torsion.png',
+      //add more images of same product as needed
+    ],
+    alt: 'Optical Torsionmeter',
+    description: '',
+    pdf: '/products_info/Torsionmeter_catalog.pdf',
+  },
+  {
+    images: [
       '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-.png',
       '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-02.png',
     ],
-    alt: 'Engine Telegraph System',
+    alt: 'Engine Order Telegraph System',
     description: '',
     pdf: '/products_info/Torsionmeter_catalog.pdf',
   },
@@ -155,7 +157,16 @@ const products = [
       '/products/Propeller_Order.jpg',
       //add more images of same product as needed
     ],
-    alt: 'Converter',
+    alt: 'Propeller Order Telegraph System',
+    description: '',
+    pdf: '/products_info/Torsionmeter_catalog.pdf',
+  },
+  {
+    images: [
+      '/products/lora.png',
+      //add more images of same product as needed
+    ],
+    alt: 'LoRa Communication system',
     description: '',
     pdf: '/products_info/Torsionmeter_catalog.pdf',
   }
@@ -212,7 +223,7 @@ export default function ProductList() {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto py-8 space-y-8 z-2">
+    <div className="max-w-4xl mx-auto py-8 space-y-8 z-2 relative">
       {products.map((product, index) => (
         <div
           key={index}
@@ -233,6 +244,16 @@ export default function ProductList() {
           </div>
         </div>
       ))}
+
+      {/* Fixed "Make in India" Image at the bottom left */}
+      <div className="fixed bottom-0 left-0 p-4">
+        <Image
+          src="/mii_img.png" // Replace with the correct path
+          alt="Make in India"
+          width={150} // Adjust width as needed
+          height={150} // Adjust height as needed
+        />
+      </div>
     </div>
   );
 }

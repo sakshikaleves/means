@@ -516,7 +516,6 @@ export default function Home() {
       </section>
 
       <section id="news" className={`py-16 px-10 ${activeSection === 'news' ? '' : 'hidden'}`}>
-        <h1 className="text-3xl font-bold mb-6 text-white text-center">Latest News</h1>
         <p className="text-lg text-black-200 max-w-4xl mx-auto text-center">
         Stay tuned for the latest updates and news from Marine Electronics And Navigation Systems Private Limited (MEANS). We are committed to keeping you informed about our most recent developments, achievements, and industry insights. From exciting new projects and partnerships to innovations in marine technology, our News page will soon be your go-to source for all things MEANS. Please check back soon for more updates!
         </p>

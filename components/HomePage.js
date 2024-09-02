@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const images = [
-  '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-.png', // Replace with your image paths
   '/products/TORSIONMETER.png',
   '/products/TORSION_METER_INSIDE.png',
+  '/products/TORSIONMETER--BAG.png',
+  '/products/optical_torsion.png',
+  '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-.png',
+  '/products/ENGING-TELEGRAPH-SYSTEM-MASTER-02.png',
   '/products/Propeller_Order.jpg',
+  '/products/lora.png',
 ];
 
 const HomePage = () => {
@@ -17,10 +21,22 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
+      <h1 className='text-center text-2xl font-bold'>Our Product Line</h1>
       <div className="image-carousel mt-10">
         <div className="image-track">
-          {images.concat(images).map((src, index) => (
+          {images.map((src, index) => (
             <div key={index} className="image-card">
+              <Image 
+                src={src} 
+                alt={`Image ${index + 1}`} 
+                width={150} 
+                height={150} 
+                className="carousel-image"
+              />
+            </div>
+          ))}
+          {images.map((src, index) => (
+            <div key={index + images.length} className="image-card">
               <Image 
                 src={src} 
                 alt={`Image ${index + 1}`} 
