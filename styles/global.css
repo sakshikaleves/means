@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 /* Smooth Scroll Behavior */
 html {
   scroll-behavior: smooth;
@@ -35,44 +41,73 @@ nav button.active-tab {
   transform: translateY(-10px);
 }
 
+
 /* Hover Effects */
 nav button:hover {
-  background-color: #4091D7; /* Hover background color */
+  /* background: linear-gradient(to bottom, #4b94e0, #8db9e5, #bfd3eb, transparent);  */
 }
 
-/* Navigation Bar Styling */
-.nav-container {
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  position: relative;
+  
+  nav button.active-tab,
+  nav button:hover {
+    /* transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; */
+  }
+  .nav-container {
+    height: 120px; /* Adjust the height according to your design */
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .nav-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #4091D7; /* Fallback background color */
+    position: relative;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+ 
+  .nav-button {
+    flex: 1;
+    background-color: transparent; 
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .nav-button:hover,
+  .active-tab {
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    transform: translateY(-10px);
+  }
+  
+  nav .nav-button:not(.active-tab) {
+    transform: none; /* Ensure non-active buttons aren't affected */
 }
+  
+  .nav-button:hover {
+    background-color: #4091D7; /* Hover background color */
+  }
+  
 
-.nav-bg {
-  width: 100%;
-  height: 100%;
-  background-color: #4091D7;
-  position: relative;
-}
 
-.nav-buttons {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-}
-
-.nav-button {
-  flex: none;
-  background-color: transparent;
-  color: white;
-  font-weight: bolder;
-  text-align: center;
-  padding: 10px 0;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  width: calc(100% / 7);
+  nav .nav-button {
+    flex: none; /* Disable flex-grow to ensure buttons don't stretch */
+    width: calc(100% / 7); /* Assuming there are 7 buttons */
+    text-align: center; /* Center the text inside the button */
+    padding: 10px 0; /* Adjust padding to control the vertical centering */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* background: linear-gradient(to bottom, #2478cc, #73a5d8, #a8c2e4, #c3cbd2);  */
 }
 
 .nav-button.active-tab {
@@ -123,7 +158,7 @@ nav button:hover {
 
 .image-track {
   display: flex;
-  width: calc(200px * 8 + 40px * 8); /* Adjusted to accommodate increased gap */
+  width: calc(200px * 16 + 40px * 16); /* Updated width to include all images and gaps */
   animation: scroll 20s linear infinite;
 }
 
@@ -149,6 +184,94 @@ nav button:hover {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Scrolls to half the width of the entire image set to loop */
+    transform: translateX(-50%); /* Scrolls the full width of the track */
+  }
+}
+
+
+
+
+/* Menu Button for Mobile */
+.menu-button {
+  padding: 20px;
+  background-color: transparent; /* Highlighting for visibility, you can remove this */
+  border: none;
+  cursor: pointer; 
+  margin-bottom: 40px;
+}
+
+/* Positioning the menu button in the desired spot on mobile */
+.lg:hidden .menu-button {
+  position: absolute;
+  left: 50%;
+  bottom: -50px; /* Adjusted from -20px to -50px to move the button further down */
+  transform: translateX(-50%);
+  z-index: 100; /* Ensures the button stays on top */
+}
+
+
+/* Menu Overlay */
+.menu-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Menu Container */
+.menu-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Items */
+.menu-item {
+  display: block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 8px 16px;
   }
 }
